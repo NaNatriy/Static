@@ -1,9 +1,6 @@
 package Cars;
 
-import Drivers.Driver;
-import Drivers.DriverC;
-
-public class Transport <T>{
+public abstract class Transport <T>{
     protected final String brand;
     protected final String model;
     protected final double volume;
@@ -30,12 +27,10 @@ public class Transport <T>{
 
     @Override
     public String toString() {
-        return "Transport{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", volume=" + volume +
-                '}';
+        return "Легковой автомобиль: " + "Бренд - " + brand + ", Модель - " + model + ", Объем двигателя - " + volume + " " + driver;
     }
+
+    public abstract void printType();
 
     public String getBrand() {
         return brand;

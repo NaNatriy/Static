@@ -2,8 +2,8 @@ package Drivers;
 
 public class Driver {
     private final String FIO;
-    private boolean license;
-    private int experience;
+    private final boolean license;
+    private final int experience;
 
     public Driver(String FIO, boolean license, int experience) {
         this.FIO = FIO;
@@ -13,9 +13,7 @@ public class Driver {
 
     @Override
     public String toString() {
-        return  "Водитель:  FIO='" + FIO + '\'' +
-                ", license=" + license +
-                ", experience=" + experience +
+        return  "Водитель:  ФИО - " + FIO + ", Права - " + license + ", Стаж - " + experience +
                 '}';
     }
 

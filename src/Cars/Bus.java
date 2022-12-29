@@ -4,17 +4,18 @@ import Drivers.DriverD;
 
 public class Bus extends Transport<DriverD> implements Competing{
 
-
-    public Bus(String brand, String model , double volume, DriverD driver) {
+    private CarD carD;
+    public Bus(String brand, String model , double volume, DriverD driver, CarD carD) {
         super(brand, model, volume, driver);
+        this.carD = carD;
     }
 
-    @Override
-    public String toString() {
-        return "Автобус:" +
-                    "Бренд='" + brand + '\'' +
-                    ", Модель='" + model + '\'' +
-                    '}';
+    public void printType() {
+        if (carD != null) {
+            System.out.println(carD);
+        } else {
+            System.out.println("Данных по транспортному средству недостаточно");
+        }
     }
 
     @Override

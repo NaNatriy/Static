@@ -2,11 +2,20 @@ package Cars;
 
 import Drivers.DriverC;
 
-public class Trucks extends Transport<DriverC> implements Competing{
+public class Trucks extends Transport<DriverC> implements Competing {
 
-
-    public Trucks(String brand, String model, double volume, DriverC driver) {
+private CarC carC;
+    public Trucks(String brand, String model, double volume, DriverC driver, CarC carC) {
         super(brand, model, volume, driver);
+        this.carC = carC;
+    }
+
+    public void printType() {
+        if (carC != null) {
+            System.out.println(carC);
+        } else {
+            System.out.println("Данных по транспортному средству недостаточно");
+        }
     }
 
     @Override
@@ -23,5 +32,5 @@ public class Trucks extends Transport<DriverC> implements Competing{
     public void maxSpeed() {
         System.out.println("150km/ch");
     }
-}
 
+}
