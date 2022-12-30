@@ -10,6 +10,12 @@ private CarC carC;
         this.carC = carC;
     }
 
+
+    @Override
+    public void diagnostics() {
+        System.out.println("Пройти диагностику");
+    }
+
     public void printType() {
         if (carC != null) {
             System.out.println(carC);

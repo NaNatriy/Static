@@ -10,6 +10,11 @@ public class Bus extends Transport<DriverD> implements Competing{
         this.carD = carD;
     }
 
+    @Override
+    public void diagnostics() {
+        System.out.println("«Автобусы» диагностику проходить не могут");
+    }
+
     public void printType() {
         if (carD != null) {
             System.out.println(carD);

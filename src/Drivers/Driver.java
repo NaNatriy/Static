@@ -1,8 +1,11 @@
 package Drivers;
 
+import java.io.NotActiveException;
+import java.rmi.RemoteException;
+
 public class Driver {
     private final String FIO;
-    private final boolean license;
+    private boolean license;
     private final int experience;
 
     public Driver(String FIO, boolean license, int experience) {

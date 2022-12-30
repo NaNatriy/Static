@@ -10,6 +10,11 @@ private CarB carB;
         this.carB = carB;
     }
 
+    @Override
+    public void diagnostics() {
+        System.out.println("Пройти диагностику");
+    }
+
     public void printType() {
         if (carB != null) {
             System.out.println(carB);
