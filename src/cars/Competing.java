@@ -1,4 +1,4 @@
-package Cars;
+package cars;
 
 public interface Competing {
      void pitStop();

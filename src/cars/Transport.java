@@ -1,8 +1,6 @@
-package Cars;
+package cars;
 
-import Drivers.DriverB;
-import Drivers.DriverC;
-import Drivers.DriverD;
+import drivers.DriverD;
 
 public abstract class Transport <T>{
     protected final String brand;
@@ -29,11 +27,9 @@ public abstract class Transport <T>{
         this.driver = driver;
     }
 
-    public abstract void diagnostics();
-
     @Override
     public String toString() {
-        return "Транспортное средство: " + "Бренд - " + brand + ", Модель - " + model + ", Объем двигателя - " + volume + " " + driver;
+        return "Транспортное средство: " + "Бренд - " + brand + ", Модель - " + model + ", Объем двигателя - " + volume + " ";
     }
 
     public abstract void printType();
@@ -48,6 +44,10 @@ public abstract class Transport <T>{
 
     public double getVolume() {
         return volume;
+    }
+
+    public void diagnostics() throws Exception {
+        System.out.println("Пройти диагностику");
     }
 
     public void start() {

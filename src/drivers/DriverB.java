@@ -1,4 +1,4 @@
-package Drivers;
+package drivers;
 
 public class DriverB extends Driver{
     public DriverB(String FIO, boolean license, int experience) {

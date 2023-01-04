@@ -1,7 +1,4 @@
-package Drivers;
-
-import java.io.NotActiveException;
-import java.rmi.RemoteException;
+package drivers;
 
 public class Driver {
     private final String FIO;
@@ -16,7 +13,7 @@ public class Driver {
 
     @Override
     public String toString() {
-        return  "Водитель:  ФИО - " + FIO + ", Права - " + license + ", Стаж - " + experience +
+        return "Водитель:  ФИО - " + FIO + ", Права - " + license + ", Стаж - " + experience +
                 '}';
     }
 
@@ -43,4 +40,14 @@ public class Driver {
     public void refuel() {
         System.out.println("Заправить авто");
     }
+
+    public boolean chekedLisence() throws Exception {
+        if (!license) {
+            throw new Exception("У водителя нет прав");
+        } else {
+            System.out.println();
+        }
+        return false;
+    }
 }
+

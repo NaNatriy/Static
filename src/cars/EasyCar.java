@@ -1,7 +1,7 @@
-package Cars;
+package cars;
 
 
-import Drivers.DriverB;
+import drivers.DriverB;
 
 public class EasyCar extends Transport<DriverB> implements Competing {
 private CarB carB;
@@ -9,12 +9,6 @@ private CarB carB;
         super(brand, model, volume, driver);
         this.carB = carB;
     }
-
-    @Override
-    public void diagnostics() {
-        System.out.println("Пройти диагностику");
-    }
-
     public void printType() {
         if (carB != null) {
             System.out.println(carB);
@@ -38,6 +32,22 @@ private CarB carB;
         System.out.println("240km/ch");
     }
 
+    public enum CarB {
+        SEDAN("Седан"), HATCHBACK("Хетчбек"), COUPE("Купе"), UNIVERSAL("Универсал"), SUV("Внедорожник"), CROSSOVER("Кроссовер"), PICKUP("Пикап"), VAN("Фургон"), MINIVAN("Минивэн");
 
+        private String ruName;
 
+        CarB(String ruName) {
+            this.ruName = ruName;
+        }
+
+        @Override
+        public String toString() {
+            return "Тип кузова: " + ruName;
+        }
+
+        public String getRuName() {
+            return ruName;
+        }
+    }
 }
