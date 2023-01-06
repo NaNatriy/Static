@@ -1,8 +1,6 @@
 package cars;
 
-import drivers.DriverD;
-
-public abstract class Transport <T>{
+public abstract class Transport<T> {
     protected final String brand;
     protected final String model;
     protected final double volume;
@@ -46,7 +44,7 @@ public abstract class Transport <T>{
         return volume;
     }
 
-    public void diagnostics() throws Exception {
+    public void diagnostics() {
         System.out.println("Пройти диагностику");
     }
 
@@ -58,7 +56,10 @@ public abstract class Transport <T>{
         System.out.println("Закончил движение");
     }
 
-    public void categori() {
+    public void category() {
         System.out.println("водитель " + driver + " управляет автомобилем " + this + " и будет участвовать в заезде");
+    }
+
+    public static class busException extends Throwable {
     }
 }

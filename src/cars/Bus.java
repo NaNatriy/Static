@@ -34,10 +34,9 @@ public class Bus extends Transport<DriverD> implements Competing{
         System.out.println("130km/ch");
     }
 
-    @Override
-    public void diagnostics() throws Exception {
-        throw new Exception ("Автобусы диагностику проходить не могут");
-    }
+//    public static void diagnostics() throws Exception {
+//        throw new Exception ("Автобусы диагностику проходить не могут");
+//    }
 
     public enum CarD {
         VERYSMALL(null, 10), SMALL(null, 25), MEDIUM(40, 50), LARGE(60, 80), VERYLARGE(100, 120);

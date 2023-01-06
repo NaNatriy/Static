@@ -42,6 +42,12 @@ public class Main {
         bus1.printType();
         System.out.println(driverD);
         driverD.chekedLisence();
+        try {
+            bus1.diagnostics();
+            throw new Transport.busException();
+        } catch (Transport.busException exp) {
+            System.out.println("Автобусы не могут проходить диагностику");
+        }
 
 //        eaCar1.start();
 //        eaCar1.stop();
@@ -51,8 +57,6 @@ public class Main {
 //        bus2.maxSpeed();
 //
 //        eaCar1.categori();
-
-
-
     }
+
 }

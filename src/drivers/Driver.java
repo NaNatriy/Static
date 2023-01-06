@@ -41,13 +41,17 @@ public class Driver {
         System.out.println("Заправить авто");
     }
 
-    public boolean chekedLisence() throws Exception {
+    public void chekedLisence(){
         if (!license) {
-            throw new Exception("У водителя нет прав");
-        } else {
-            System.out.println();
+            try {
+                throw new LisException();
+            } catch (LisException exp) {
+                System.out.println("У водителя нет прав");
+            }
         }
-        return false;
+    }
+
+    private static class LisException extends Throwable {
     }
 }
 
