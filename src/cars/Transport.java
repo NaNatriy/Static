@@ -45,7 +45,7 @@ public abstract class Transport<T> {
     }
 
     public void diagnostics() {
-        System.out.println("Пройти диагностику");
+
     }
 
     public void start() {
@@ -60,6 +60,5 @@ public abstract class Transport<T> {
         System.out.println("водитель " + driver + " управляет автомобилем " + this + " и будет участвовать в заезде");
     }
 
-    public static class busException extends Throwable {
-    }
 }
+

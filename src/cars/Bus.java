@@ -20,6 +20,16 @@ public class Bus extends Transport<DriverD> implements Competing{
     }
 
     @Override
+    public void diagnostics(){
+        try {
+            System.out.println("Пройти диагностику");
+            throw new notDiagnostics();
+        } catch (notDiagnostics exp){
+            System.out.println("Автобусы диагностику проходить не могут");
+        }
+    }
+
+    @Override
     public void pitStop() {
         System.out.println("проверить тормоза");
     }
@@ -67,3 +77,6 @@ public class Bus extends Transport<DriverD> implements Competing{
         }
     }
 }
+    class notDiagnostics extends Throwable{
+
+    }

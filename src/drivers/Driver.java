@@ -41,7 +41,7 @@ public class Driver {
         System.out.println("Заправить авто");
     }
 
-    public void chekedLisence(){
+    public void chekedLisence() {
         if (!license) {
             try {
                 throw new LisException();
@@ -50,8 +50,8 @@ public class Driver {
             }
         }
     }
-
-    private static class LisException extends Throwable {
-    }
 }
+    class LisException extends Throwable {
+    }
+
 

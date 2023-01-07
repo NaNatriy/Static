@@ -18,6 +18,12 @@ private CarB carB;
     }
 
     @Override
+    public void diagnostics(){
+        System.out.println("Пройти диагностику");
+        System.out.println("Диагностика пройдена");
+    }
+
+    @Override
     public void pitStop() {
         System.out.println("попить водички");
     }
