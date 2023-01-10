@@ -1,12 +1,13 @@
 package cars;
 
 import drivers.DriverC;
+import mechanics.Mechanic;
 
-public class Trucks extends Transport<DriverC> implements Competing {
+public class Trucks extends Transport<DriverC, Mechanic> implements Competing {
 
 private CarC carC;
-    public Trucks(String brand, String model, double volume, DriverC driver, CarC carC) {
-        super(brand, model, volume, driver);
+    public Trucks(String brand, String model, double volume, DriverC driver, CarC carC, Mechanic cars, Mechanic mechanicA) {
+        super(brand, model, volume, driver, cars);
         this.carC = carC;
     }
 

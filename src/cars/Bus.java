@@ -1,13 +1,14 @@
 package cars;
 
-import drivers.DriverC;
 import drivers.DriverD;
+import errExp.notDiagnostics;
+import mechanics.Mechanic;
 
-public class Bus extends Transport<DriverD> implements Competing{
+public class Bus extends Transport<DriverD, Mechanic> implements Competing{
 
     private CarD carD;
-    public Bus(String brand, String model , double volume, DriverD driver, CarD carD) {
-        super(brand, model, volume, driver);
+    public Bus(String brand, String model , double volume, DriverD driver, CarD carD, Mechanic cars, Mechanic mechanicA) {
+        super(brand, model, volume, driver, cars);
         this.carD = carD;
     }
 
@@ -77,6 +78,4 @@ public class Bus extends Transport<DriverD> implements Competing{
         }
     }
 }
-    class notDiagnostics extends Throwable{
 
-    }

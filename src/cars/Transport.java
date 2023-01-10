@@ -1,12 +1,17 @@
 package cars;
 
-public abstract class Transport<T> {
+import mechanics.Mechanic;
+
+public abstract class Transport<T, cars> extends Mechanic<cars> {
     protected final String brand;
     protected final String model;
     protected final double volume;
     protected T driver;
 
-    public Transport(String brand, String model, double volume, T driver) {
+//    protected Y mechanics;
+
+    public Transport(String brand, String model, double volume, T driver, Mechanic cars) {
+        super(cars);
         if (brand == null || brand.isBlank()) {
             this.brand = "default";
         } else {

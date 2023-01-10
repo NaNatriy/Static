@@ -1,6 +1,8 @@
 package drivers;
 
-public class Driver {
+import errExp.LisException;
+
+public class Driver{
     private final String FIO;
     private boolean license;
     private final int experience;
@@ -13,8 +15,7 @@ public class Driver {
 
     @Override
     public String toString() {
-        return "Водитель:  ФИО - " + FIO + ", Права - " + license + ", Стаж - " + experience +
-                '}';
+        return "Водитель:  ФИО - " + FIO + ", Права - " + license + ", Стаж - " + experience;
     }
 
     public String getFIO() {
@@ -44,14 +45,14 @@ public class Driver {
     public void chekedLisence() {
         if (!license) {
             try {
-                throw new LisException();
+                throw new LisException("У водителя нет прав");
             } catch (LisException exp) {
                 System.out.println("У водителя нет прав");
             }
         }
     }
+
 }
-    class LisException extends Throwable {
-    }
+
 
 
