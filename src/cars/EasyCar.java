@@ -7,7 +7,7 @@ import mechanics.Mechanic;
 public class EasyCar extends Transport<DriverB, Mechanic> implements Competing {
 private CarB carB;
     public EasyCar(String brand, String model, double volume, DriverB driver, CarB carB, Mechanic cars, Mechanic mechanicA) {
-        super(brand, model, volume, driver, cars);
+        super(brand, model, volume, driver);
         this.carB = carB;
     }
     public void printType() {

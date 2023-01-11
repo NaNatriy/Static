@@ -8,7 +8,7 @@ public class Bus extends Transport<DriverD, Mechanic> implements Competing{
 
     private CarD carD;
     public Bus(String brand, String model , double volume, DriverD driver, CarD carD, Mechanic cars, Mechanic mechanicA) {
-        super(brand, model, volume, driver, cars);
+        super(brand, model, volume, driver);
         this.carD = carD;
     }
 

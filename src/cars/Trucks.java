@@ -7,7 +7,7 @@ public class Trucks extends Transport<DriverC, Mechanic> implements Competing {
 
 private CarC carC;
     public Trucks(String brand, String model, double volume, DriverC driver, CarC carC, Mechanic cars, Mechanic mechanicA) {
-        super(brand, model, volume, driver, cars);
+        super(brand, model, volume, driver);
         this.carC = carC;
     }
 

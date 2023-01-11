@@ -3,13 +3,13 @@ package mechanics;
 import cars.Transport;
 import errExp.IncorrectInput;
 
-public class Mechanic<Y> {
+public class Mechanic {
     private String name;
     private String company;
 
     Enum transp;
 
-    public Mechanic(String name, String company, Mechanic.transp transp) {
+    public Mechanic(String name, String company, Mechanic.Transp transp) {
         this.name = name;
         this.company = company;
         this.transp = transp;
@@ -54,14 +54,13 @@ public class Mechanic<Y> {
         } else {
             this.company = company;
         }
-
     }
-    public enum transp{
+    public enum Transp{
         EASYCAR("Легковые"), TRUCKS("Грузовые"), BUS("Автобусы"), ALL("Все");
 
         String type;
 
-        transp(String type) {
+        Transp(String type) {
             this.type = type;
         }
 
