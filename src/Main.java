@@ -32,7 +32,6 @@ public class Main {
 //        System.out.println(driverB);
 //        driverB.chekedLisence();
 //        System.out.println(driverB.chekedLisence());
-        System.out.println("-------------------------------------");
 
         Trucks trCar1 = new Trucks("Truck", "Truck", 5.0, driverC, Trucks.CarC.N3, mechanicC, mechanicA);
 //        Trucks trCar2 = new Trucks("Truck", "Truck", 5.0, driverC);
@@ -43,7 +42,6 @@ public class Main {
 //        trCar1.diagnostics();
 //        System.out.println(driverC);
 //        driverC.chekedLisence();
-        System.out.println("-------------------------------------");
 
         Bus bus1 = new Bus("Bus", "Bus", 4.3, driverD, Bus.CarD.LARGE, mechanicD, mechanicA);
 //        Bus bus2 = new Bus("Bus", "Bus", 4.3, driverD);
@@ -69,22 +67,36 @@ public class Main {
         mechanicList.putIfAbsent(bus1, mechanicC);
         mechanicList.putIfAbsent(bus1, mechanicB);
         mechanicList.putIfAbsent(Mechanic.Transp.ALL, mechanicA);
-        System.out.println(mechanicList.values());
 
-//        List<Transport> transportList = new ArrayList<>();
-//        transportList.add(eaCar1);
-//        transportList.add(eaCar1);
-//        transportList.add(trCar1);
-//        transportList.add(bus1);
-//        System.out.println(transportList);
+        Iterator<Map.Entry<Object, Mechanic>> mechanicIterator = mechanicList.entrySet().iterator();
+        while (mechanicIterator.hasNext()) {
+            System.out.println(mechanicIterator.next());
+        }
+        System.out.println("-------------------------------------");
+
+        List<Transport> transportList = new ArrayList<>();
+        transportList.add(eaCar1);
+        transportList.add(eaCar1);
+        transportList.add(trCar1);
+        transportList.add(bus1);
+
+        Iterator<Transport> transportIterator = transportList.iterator();
+        while (transportIterator.hasNext()){
+            System.out.println(transportIterator.next());
+        }
+        System.out.println("-------------------------------------");
+
 
         Set<Driver> driverList = new HashSet<>();
         driverList.add(driverB);
         driverList.add(driverC);
         driverList.add(driverD);
         driverList.add(driverD);
-        driverList.add(driverD);
-        System.out.println(driverList);
+
+        Iterator<Driver> driverIterator = driverList.iterator();
+        while (driverIterator.hasNext()){
+            System.out.println(driverIterator.next());
+        }
 
 
     }
