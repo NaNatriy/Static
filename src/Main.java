@@ -13,9 +13,9 @@ public class Main {
     public static void main(String[] args) throws Exception {
 //        System.out.println(CarD.LARGE.toString());
 
-        DriverB driverB = new DriverB("ABC", true, 5);
-        DriverC driverC = new DriverC("ABC", true, 5);
-        DriverD driverD = new DriverD("ABC", false, 5);
+        DriverB driverB = new DriverB("Степан", true, 5);
+        DriverC driverC = new DriverC("Макс", true, 5);
+        DriverD driverD = new DriverD("Лёша", false, 5);
 
         Mechanic mechanicB = new Mechanic("Павел", "Ford", Mechanic.Transp.EASYCAR);
         Mechanic mechanicC = new Mechanic("Иван", "CAT", Mechanic.Transp.TRUCKS);
@@ -63,25 +63,13 @@ public class Main {
 //        bus2.maxSpeed();
 
         HashMap<Object, Mechanic> mechanicList = new HashMap<Object, Mechanic>();
-        mechanicList.put(eaCar1, mechanicB);
-        mechanicList.put(trCar1, mechanicC);
-        mechanicList.put(bus1, mechanicD);
-        mechanicList.put(bus1, mechanicD);
-        mechanicList.put(bus1, mechanicD);
-        mechanicList.put(Mechanic.Transp.ALL, mechanicA);
-        System.out.println(mechanicList);
-        System.out.println("Есть дубликаты");
-
-        System.out.println(mechanicList.values()
-                .stream()
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .entrySet()
-                .stream()
-                .filter(e -> e.getValue() > 1)
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toSet()));
+        mechanicList.putIfAbsent(eaCar1, mechanicB);
+        mechanicList.putIfAbsent(trCar1, mechanicC);
+        mechanicList.putIfAbsent(bus1, mechanicD);
+        mechanicList.putIfAbsent(bus1, mechanicC);
+        mechanicList.putIfAbsent(bus1, mechanicB);
+        mechanicList.putIfAbsent(Mechanic.Transp.ALL, mechanicA);
         System.out.println(mechanicList.values());
-        System.out.println("Нет дубликатов");
 
 //        List<Transport> transportList = new ArrayList<>();
 //        transportList.add(eaCar1);
@@ -89,12 +77,14 @@ public class Main {
 //        transportList.add(trCar1);
 //        transportList.add(bus1);
 //        System.out.println(transportList);
-//
-//        List<Driver> driverList = new ArrayList<>();
-//        driverList.add(driverB);
-//        driverList.add(driverC);
-//        driverList.add(driverD);
-//        System.out.println(driverList);
+
+        Set<Driver> driverList = new HashSet<>();
+        driverList.add(driverB);
+        driverList.add(driverC);
+        driverList.add(driverD);
+        driverList.add(driverD);
+        driverList.add(driverD);
+        System.out.println(driverList);
 
 
     }
